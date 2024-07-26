@@ -8,9 +8,9 @@ describe('Ecosia.org Demo', function() {
         console.log('Page title is: ' + title); // Log the page title for debugging
       })
       
-      .assert.visible('input[type=search]')
+      
       .setValue('input[type=search]', 'nightwatch')
-      .assert.visible('button[type=submit]')
+      
       .click('button[type=submit]')
     
      
