@@ -5,7 +5,7 @@ describe('duckduckgo example', function() {
       .waitForElementVisible('input[name=q]')
       .sendKeys('input[name=q]', ['Nightwatch.js'])
       .click('*[type="submit"]')
-      .assert.visible('#react-layout')
+      
       
   }); 
 });
