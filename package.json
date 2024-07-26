@@ -1,19 +1,7 @@
 {
-  "name": "Nightwatch",
-  "version": "1.0.0",
-  "description": "Your project description",
-  "main": "index.js",
-  "scripts": {
-    "test": "nightwatch --env chrome"
-  },
   "dependencies": {
     "chromedriver": "^126.0.5",
     "express": "^4.19.2",
     "nightwatch": "^3.7.0"
-  },
-  "devDependencies": {
-    "some-dev-dependency": "^1.0.0"
-  },
-  "author": "Your Name",
-  "license": "ISC"
+  }
 }
