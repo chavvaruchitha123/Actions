@@ -6,6 +6,6 @@ describe('duckduckgo example', function() {
       .sendKeys('input[name=q]', ['Nightwatch.js'])
       .click('*[type="submit"]')
       .assert.visible('#react-layout')
-      // .assert.textContains('#react-layout', 'Nightwatch.js');
+      
   }); 
 });
