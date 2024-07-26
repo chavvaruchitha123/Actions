@@ -1,4 +1,10 @@
 {
+  "scripts": {
+    "test": "nightwatch --env chrome"
+  }
+}
+
+{
   "dependencies": {
     "chromedriver": "^126.0.5",
     "express": "^4.19.2",
