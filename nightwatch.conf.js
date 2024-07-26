@@ -128,6 +128,69 @@
 //   },
   
 // };
+// const chromedriver=require('chromedriver')
+// module.exports = {
+//   src_folders: ['test', 'nightwatch/examples'],
+//   page_objects_path: ['nightwatch/page-objects'],
+//   custom_commands_path: ['nightwatch/custom-commands'],
+//   custom_assertions_path: ['nightwatch/custom-assertions'],
+//   plugins: [],
+//   globals_path: '',
+//   webdriver: {
+//     start_process:true,
+//     server_path: chromedriver.path,
+//     port: 2034,
+//     cli_args: [
+//       '--verbose'
+//     ]
+//   },
+
+//   test_workers: {
+//     enabled: true
+//   },
+//   test_settings: {
+//     default: {
+//       disable_error_log: false,
+//       screenshots: {
+//         enabled: false,
+//         path: 'screens',
+//         on_failure: true
+//       },
+//       desiredCapabilities: {
+//         browserName: 'chrome'
+//       },
+//       webdriver: {
+//         start_process: true,
+//         server_path: ''
+//       },
+//       globals: {
+//         devServerURL: 'http://localhost:2034' // Your custom URL
+//       }
+//     },
+//     chrome: {
+//       desiredCapabilities: {
+//         browserName: 'chrome',
+//         'goog:chromeOptions': {
+//           args: [
+//             //'--no-sandbox',
+//             //'--ignore-certificate-errors',
+//             //'--allow-insecure-localhost',
+//             //'--headless=new'
+//           ]
+//         }
+//       },
+//       webdriver: {
+//         start_process: true,
+//         server_path: '',
+//         cli_args: [
+//           // --verbose
+//         ]
+//       }
+//     }
+//   }
+// };
+const chromedriver = require('chromedriver');
+
 module.exports = {
   src_folders: ['test', 'nightwatch/examples'],
   page_objects_path: ['nightwatch/page-objects'],
@@ -135,7 +198,15 @@ module.exports = {
   custom_assertions_path: ['nightwatch/custom-assertions'],
   plugins: [],
   globals_path: '',
-  webdriver: {},
+  webdriver: {
+    start_process: true,
+    server_path: chromedriver.path,
+    port: 2034,
+    cli_args: [
+      '--verbose'
+    ]
+  },
+
   test_workers: {
     enabled: true
   },
@@ -148,11 +219,16 @@ module.exports = {
         on_failure: true
       },
       desiredCapabilities: {
-        browserName: 'chrome'
-      },
-      webdriver: {
-        start_process: true,
-        server_path: ''
+        browserName: 'chrome',
+        'goog:chromeOptions': {
+          args: [
+            '--headless',
+            '--no-sandbox',
+            '--disable-dev-shm-usage',
+            '--disable-gpu',
+            '--window-size=1920,1080'
+          ]
+        }
       },
       globals: {
         devServerURL: 'http://localhost:2034' // Your custom URL
@@ -163,18 +239,19 @@ module.exports = {
         browserName: 'chrome',
         'goog:chromeOptions': {
           args: [
-            //'--no-sandbox',
-            //'--ignore-certificate-errors',
-            //'--allow-insecure-localhost',
-            //'--headless=new'
+            '--headless',
+            '--no-sandbox',
+            '--disable-dev-shm-usage',
+            '--disable-gpu',
+            '--window-size=1920,1080'
           ]
         }
       },
       webdriver: {
         start_process: true,
-        server_path: '',
+        server_path: chromedriver.path,
         cli_args: [
-          // --verbose
+          '--verbose'
         ]
       }
     }
