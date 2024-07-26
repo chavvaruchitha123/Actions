@@ -9,6 +9,10 @@ on:
   pull_request:
     branches: [ "main" ]
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -35,4 +39,4 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: actions/deploy-pages@v1
       with:
-        token: ${{ secrets.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 }}
+        token: ${{ secrets.GH_PAGES_TOKEN }}
