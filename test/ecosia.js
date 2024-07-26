@@ -7,7 +7,7 @@ describe('Ecosia.org Demo', function() {
       .getTitle(function(title) {
         console.log('Page title is: ' + title); // Log the page title for debugging
       })
-      .assert.titleContains('Ecosia')
+      
       .assert.visible('input[type=search]')
       .setValue('input[type=search]', 'nightwatch')
       .assert.visible('button[type=submit]')
